@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div class="name">
+    <div class="main">
+      <h2>
+        {{ branch.name }}
+      </h2>
+      <button (click)="showChildInput()" *ngIf="!displayOnly">+</button>
+      <button (click)="hideChildInput()" *ngIf="!displayOnly">x</button>
+      <button (click)="removeSelf()" *ngIf="!displayOnly">-</button>
+    </div>
+    <div class="input" *ngIf="displayChildInput">
+      <input (keyup)="inputName($event)" type="text" name="childNAme" id="" />
+      <button (click)="addChild()">confirm</button>
+    </div>
+  </div>
+
+
+  <div class="recursive" *ngFor="let child of branch.children">
+    <recursive-component [branch]="child" (removeCb)="removeChild(child.name)" [displayOnly]="displayOnly"></recursive-component>
+  </div>
+</div>

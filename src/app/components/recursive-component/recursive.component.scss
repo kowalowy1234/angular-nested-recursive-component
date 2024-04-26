@@ -1,0 +1,23 @@
+.container {
+  border-left: 1px solid rgb(225, 225, 225);
+  .name {
+    gap: 1rem;
+    align-items: center;
+
+    .main {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            margin-right: 2rem;
+        }
+    }
+
+    .input {
+
+    }
+  }
+  .recursive {
+    margin-left: 2rem;
+  }
+}
